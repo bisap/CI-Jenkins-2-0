@@ -2,15 +2,11 @@ version: '3.1'
 
 services:  
   committeemicroservice:  
-    image: "committeemicroservices:B${BUILD_NUMBER}"
-    build:
-      context: .
+    image: "committeemicroservices:B${BUILD_NUMBER}"    
   integration:
     depends_on:
       - committeemicroservice
-    image: "committeemicroservices:test-B${BUILD_NUMBER}"
-    build:
-      context: .     
+    image: "committeemicroservices:test-B${BUILD_NUMBER}"     
       
 volumes:
     dbdata:

@@ -3,10 +3,10 @@ version: '3.1'
 services:  
   committeemicroservices:     
     image: "committeemicroservices:B${BUILD_NUMBER}"     
-  integration:
-   working_dir:   /home/app
+  integration:   
     depends_on:
       - committeemicroservices
+    working_dir: /home/app
     image: "committeemicroservices:test-B${BUILD_NUMBER}"
     build: .    
     
